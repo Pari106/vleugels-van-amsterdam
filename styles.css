@@ -1,0 +1,385 @@
+/* ===== Algemene Stijl ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 80px 0 0 0;
+    font-family: 'CabinetGrotesk-Medium', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+/* ===== Typografie ===== */
+h1, h2 {
+    font-family: "Chewy", sans-serif;
+    color: #A88D73;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-family: "Chewy", sans-serif;
+    font-size: 1.1rem;
+    color: #f8f5f2;
+}
+
+p {
+    font-family: 'CabinetGrotesk-Medium';
+    color: black;
+}
+
+a {
+    font-family: "Chewy", sans-serif;
+    color: #8b624c;
+    text-decoration: none;
+}
+
+li a {
+    font-family: 'CabinetGrotesk-Medium';
+    color: black;
+}
+
+/* ===== Header Stijl ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 1em;
+    left: 0em;
+    width: 100%;
+    height: 80px;
+    padding: 0 20px;
+    background-color: transparent;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #A88D73;
+    margin: 0;
+}
+
+header img {
+    height: 90px;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Header Animatie */
+@keyframes shrink-header {
+    to {
+        height: 60px;
+        box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.26);
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+}
+
+@keyframes shrink-logo {
+    to {
+        height: 50px;
+    }
+}
+
+@keyframes shrink-title {
+    to {
+        font-size: 1.5rem;
+        color: #8b624c;
+    }
+}
+
+header {
+    animation: shrink-header linear both;
+    animation-timeline: scroll();
+    animation-range: 0 150px;
+}
+
+header img {
+    animation: shrink-logo linear both;
+    animation-timeline: scroll();
+    animation-range: 0 150px;
+}
+
+header h1 {
+    animation: shrink-title linear both;
+    animation-timeline: scroll();
+    animation-range: 0 150px;
+}
+
+/* ===== Index Pagina Stijl ===== */
+#index-page {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url("achtergrond.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#logoindex {
+    width: 200px;
+    margin: 10px 0 20px;
+    cursor: pointer;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+@keyframes flap-out {
+    0% { transform: rotate(0deg) translate(0, 0); opacity: 1; }
+    25% { transform: rotate(-15deg) translate(-30px, -30px); }
+    50% { transform: rotate(15deg) translate(60px, -60px); opacity: 0.5; }
+    75% { transform: rotate(-20deg) translate(-120px, -120px); opacity: 0; }
+    100% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+}
+
+#logoindex:active {
+    animation: flap-out 2s ease-in-out;
+}
+
+/* Vlinder Stijlen */
+#vlinder1, #vlinder2, #vlinder3 {
+    position: absolute;
+    cursor: pointer;
+}
+
+#vlinder1 { top: 430px; left: 54px; width: 105px; }
+#vlinder2 { top: 470px; left: 220px; width: 110px; }
+#vlinder3 { top: 570px; left: 120px; width: 125px; }
+
+#nav1 { position: absolute; top: 455px; left: 65px; right: 200px; }
+#nav2 { position: absolute; top: 495px; right: 44px; }
+#nav3 { position: absolute; top: 575px; right: 167px; }
+
+/* ===== Content Stijl ===== */
+#vlinders-container, #pins-container {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#rolklaver-text, #vogelwikke-text, #vuilboom-text {
+    text-align: center;
+}
+
+/* ===== Secties Stijling ===== */
+section {
+    padding: 35px 50px;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+#section1, #section2, #section3 {
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    padding: 75px;
+}
+
+#section1 { background-image: url('pin1.png'); margin-top: 5em; }
+#section2 { background-image: url('pin2.png'); }
+#section3 { background-image: url('pin3.png'); }
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ===== Specefieke Pagina Stijling ===== */
+/* Adressen */
+#adres-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 20px;
+}
+
+/* Locaties */
+#locatie1, #locatie2, #locatie3 {
+    transform: rotate(0deg);
+    width: 100px;
+    margin: auto;
+}
+
+#kaart {
+    display: block;
+    padding-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+}
+
+#toelichting {
+    position: absolute;
+    top: 18.5em;
+    right: 20px;
+    font-size: 1.2rem;
+    color: #a99786;
+}
+
+/* Lijst Styling */
+ul {
+    list-style-type: none;
+    padding-top: 1.5em;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    margin: 1.5em 0;
+    font-size: 1rem;
+}
+
+li img {
+    margin-right: 10px;
+    width: 30px;
+    height: auto;
+    align-items: center;
+}
+
+/* Planten en Vlinders */
+#plantenen article {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px;
+}
+
+#plantenen ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0px;
+    height: 150px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+#plantenen ul li {
+    display: inline-block;
+}
+
+#plantenen ul img {
+    border: none;
+    cursor: pointer;
+}
+
+#plantenen section {
+    padding-top: 0%;
+}
+
+/* Mijn Ervaring */
+#blauw {
+    display: block;
+    margin: 20px auto;
+    width: 270px;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+#blauw:hover {
+    animation: shrink-and-grow 0.8s ease forwards;
+}
+
+@keyframes shrink-and-grow {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.7); }
+    100% { transform: scale(1); }
+}
+
+/*  Footer Stijling  */
+#roze1, #geel1, #paars1, #roze2, #geel2, #paars2, #roze3, #geel3, #paars3 {
+    position: absolute;
+}
+
+#roze1 { width: 70px; right: 230px; bottom: -130px; }
+#geel1 { width: 105px; right: 120px; bottom: -145px; }
+#paars1 { width: 67px; right: 48px; bottom: -139px; }
+
+#roze2 { width: 70px; right: 230px; bottom: -1655px; }
+#geel2 { width: 100px; right: 124px; bottom: -1665px; }
+#paars2 { width: 67px; right: 48px; bottom: -1670px; }
+
+#roze3 { width: 70px; right: 230px; bottom: -1630px; }
+#geel3 { width: 100px; right: 124px; bottom: -1646px; }
+#paars3 { width: 67px; right: 48px; bottom: -1620px; }
+
+#text1, #textt1, #texttt1, #text2, #textt2, #texttt2, #text3, #textt3, #texttt3 {
+    position: absolute;
+    width: 70px;
+}
+
+#text1 { right: 215px; bottom: -110px; }
+#textt1 { right: 129px; bottom: -123px; }
+#texttt1 { right: 38px; bottom: -115px; }
+
+#text2 { right: 215px; bottom: -1611px; }
+#textt2 { right: 129px; bottom: -1630px; }
+#texttt2 { right: 38px; bottom: -1598px; }
+
+#text3 { right: 215px; bottom: -1634px; }
+#textt3 { right: 129px; bottom: -1649px; }
+#texttt3 { right: 38px; bottom: -1647px; }
+
+/*  Responsive Stijling  */
+@media (max-width: 768px) {
+    #vlinders-container, #pins-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .text {
+        max-width: 95%;
+    }
+}
+
+/* Font */
+@font-face {
+    font-family: 'CabinetGrotesk-Medium';
+    src: url('../fonts/CabinetGrotesk-Medium.woff2') format('woff2'),
+         url('../fonts/CabinetGrotesk-Medium.woff') format('woff'),
+         url('../fonts/CabinetGrotesk-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+
+
+
+
